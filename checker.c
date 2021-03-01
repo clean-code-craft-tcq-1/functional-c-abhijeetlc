@@ -1,9 +1,30 @@
 #include <stdio.h>
 #include <assert.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+#define Mintemp		0
+#define maxtemp		45
+
+double temperaturecheck(float a)
+{
+	return( (a + fabs(a))/2);	 // Trying a pure funtion
+}
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-  if(temperature < 0 || temperature > 45) {
-    printf("Temperature out of range!\n");
+  
+  double TempertureValue = temperaturecheck( temperature);
+  
+ //Check for low temperature 
+  if(TempertureValue == Mintemp) {
+    printf("Temperature Low!\n");
+    return 0;
+  } 
+  
+  //Check for High temperature 
+  if(TempertureValue >= maxtemp) {
+    printf("Temperature High!\n");
     return 0;
   } 
   
