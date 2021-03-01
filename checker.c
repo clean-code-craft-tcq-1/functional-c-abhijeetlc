@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define FALSE (1==0)
+#define TRUE  (1==1)
 
 #define Mintemp		0
 #define maxtemp		45
@@ -15,7 +17,7 @@ double temperaturecheck(float a)
 bool evaluateTemp (double Temp)
 {
 	if (Temp < Mintemp || Temp > maxtemp) {
-		return False;
+		return FALSE;
 	}
 }
 
