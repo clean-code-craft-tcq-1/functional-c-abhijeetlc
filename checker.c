@@ -12,21 +12,23 @@ double temperaturecheck(float a)
 	return( (a + fabs(a))/2);	 // Trying a pure funtion
 }
 
+int evaluateTemp (double Temp)
+{
+	if (Temp < Mintemp || Temp > maxtemp) {
+		return 0;
+	}
+}
+
 int batteryIsOk(float temperature, float soc, float chargeRate) {
   
-  double TempertureValue = temperaturecheck( temperature);
+  double TempertureValue = temperaturecheck(temperature);
   
  //Check for low temperature 
-  if(TempertureValue == Mintemp) {
-    printf("Temperature Low!\n");
+  if(!(evaluateTemp(TempertureValue))) {
+    printf("Temperature Not OK !\n");
     return 0;
   } 
   
-  //Check for High temperature 
-  if(TempertureValue >= maxtemp) {
-    printf("Temperature High!\n");
-    return 0;
-  } 
   
    if(soc < 20 ) {
     printf("State of Charge Low!\n");
