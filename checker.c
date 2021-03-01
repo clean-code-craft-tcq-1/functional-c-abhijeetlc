@@ -12,10 +12,10 @@ double temperaturecheck(float a)
 	return( (a + fabs(a))/2);	 // Trying a pure funtion
 }
 
-int evaluateTemp (double Temp)
+bool evaluateTemp (double Temp)
 {
 	if (Temp < Mintemp || Temp > maxtemp) {
-		return 0;
+		return False;
 	}
 }
 
