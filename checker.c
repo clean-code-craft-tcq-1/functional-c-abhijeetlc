@@ -21,7 +21,7 @@
 /* Arguement : Temperature  */
 int checktemperature(float TempIn)
 {
-	int TempValue = ((MINTEMP < TempIn) || (TempIn < MAXTEMP))
+	int TempValue = ((MINTEMP < TempIn) || (TempIn < MAXTEMP));
 	if (TempValue)
   {
     printf(" The current Battery temperature is %f. \n", TempIn);
@@ -66,7 +66,7 @@ int checkBattery(float TempIn, float soc, float chargeRate) {
   
   int BatteryState = 0;
   
-  int socstatus,temperaturecheck,chargeratecheck,BatteryState;
+  int socstatus,temperaturecheck,chargeratecheck;
   
      socstatus = Checksoc(soc);
      chargeratecheck = CheckChargeRate(chargeRate);
