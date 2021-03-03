@@ -25,9 +25,10 @@ bool evaluateTemp (double Temp)
 int batteryIsOk(float temperature, float soc, float chargeRate) {
   
   double TempertureValue = temperaturecheck(temperature);
+  bool result;	
   
  //Check for temperature out of range 
-  if(!(evaluateTemp(TempertureValue))) {
+  if(!(result=evaluateTemp(TempertureValue))) {
     printf("Temperature Not OK !\n");
     return 0;
   } 
